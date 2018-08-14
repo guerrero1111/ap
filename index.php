@@ -7,11 +7,11 @@
 
 	<!-- FONTAWESOME -->
 	<!-- Latest compiled and minified CSS -->
-	
+	<link rel="stylesheet" href="bootstrap.css">
 	<!-- Optional theme -->
 	<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
 	<!-- GOOGLE FONT -->
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	
 
 <!-- BODY -->
 	<style>
@@ -110,6 +110,7 @@
 
 	<div class="container text-center">
 		<h1>Personality Test</h1>
+		<?php echo ("Variable de PHP"); ?>
 	</div>
 	<div class="container text-center">
 		<ul id="quiz" class="list-group">
@@ -118,9 +119,9 @@
 	</div>
 
 	<div class="container text-center hide results">
-		<img src="https://raw.githubusercontent.com/danubevictoria/quiz/master/images/results1.jpg" class="results col-md-4 col-sm-4 col-xs-4">
-		<img src="https://raw.githubusercontent.com/danubevictoria/quiz/master/images/results2.jpg" class="results col-md-4 col-sm-4 col-xs-4">
-		<img src="https://raw.githubusercontent.com/danubevictoria/quiz/master/images/results3.jpg" class="results col-md-4 col-sm-4 col-xs-4">
+		<img src="results1.jpg" class="results col-md-4 col-sm-4 col-xs-4">
+		<img src="results2.jpg" class="results col-md-4 col-sm-4 col-xs-4">
+		<img src="results3.jpg" class="results col-md-4 col-sm-4 col-xs-4">
 	</div>
 
 	<!-- <div class="container progress">
@@ -144,10 +145,10 @@
 	<!-- SCRIPTS -->
 
 	<!-- JQUERY -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="jquery.js"></script>
 	<!-- BOOTSTRAP -->
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="jquery.js"></script>
+	<script src="bootstrap.js"></script>
 	<!-- CUSTOM -->
 	<script type="text/javascript">
 	// A personality quiz
