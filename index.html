@@ -15,6 +15,9 @@
 
 <!-- BODY -->
 	<style>
+	body{
+		background: url('fondo.jpg');
+	}
  h1 {
     font-family:'Rokkitt', serif;
     text-align: center;
@@ -36,7 +39,7 @@ p {
 }
 /* Quiz Classes */
  .quizContainer {
-    background-color: lightgoldenrodyellow;
+   
     border-radius: 6px;    
     margin: auto;
     padding-top: 5px;
@@ -66,8 +69,9 @@ p {
     height: auto;
     margin: auto;
     border-radius: 6px;
-    background-color: lightgrey;
     text-align: center;
+    color:#ffffff;
+    margin-bottom: 17px;
 }
 .quizMessage {
     background-color: peachpuff;
@@ -106,6 +110,13 @@ label > input + img{ /* IMAGE STYLES */
 label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid #f00;
 }
+.logo{
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+.col-md-6 img{
+	margin-bottom: 20px;
+}
 /* End of Quiz Classes */
 	</style>
 
@@ -115,8 +126,27 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 <body>
 
 
-    <div class="quizContainer">
-         <h1>Hola, Bienvenido a las preguntas</h1>
+    <div class="quizContainer row">
+    	<div class="container text-center">
+    		<img class="logo" src="logo1.png" style="width: auto;">    		
+    	</div>
+        
+
+        <!-- <div class="container sexo" style="height: 800px;margin-bottom: 300px;">
+        	<div class="col-md-12 text-center">SELECCIONA TU SEXO</div>
+        	<div class="col-md-6 text-center">HOMBRE</div>
+        	<div class="col-md-6 text-center">MUJER</div>
+        </div>
+
+        <div class="container informacion"></div>
+
+        <div class="container configuracion" style="height: 800px;margin-bottom: 300px;">
+        	<div class="col-md-12 text-center">SELECCIONE LOS PRODUCTOS DISPONIBLES (Minimo 2)</div>
+        	<div class="col-md-6 text-center">PRODUCTO 1</div>
+        	<div class="col-md-6 text-center">PRODUCTO 2</div>
+        	<div class="col-md-6 text-center">PRODUCTO 3</div>
+        	<div class="col-md-6 text-center">PRODUCTO 4</div>
+        </div> -->
 
         <div class="container question"></div>
         <div class="container choiceList"></div>
@@ -144,24 +174,24 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
  */
 
 var questions = [{
-    question: "Pregunta 1",
-    choices: ["results1.jpg", "results2.jpg", "results1.jpg", "results2.jpg"],
+    question: "Es momento de compartir con tus amigos, ¿en dónde prefieres estar?",
+    choices: ["preguntas/lugar/13.png", "preguntas/lugar/14.png", "preguntas/lugar/15.png", "preguntas/lugar/14.png"],
     correctAnswer: 0
 }, {
-    question: "Pregunta 2",
-    choices: ["results2.jpg", "results1.jpg", "results2.jpg", "results1.jpg"],
+    question: "Llegó el fin de semana, ¿a quién llamas para ver qué plan?",
+    choices: ["preguntas/compania/10.png", "preguntas/compania/11.png", "preguntas/compania/12.png", "preguntas/lugar/14.png"],
     correctAnswer: 1
 }, {
-    question: "Pregunta 3",
-    choices: ["results1.jpg", "results2.jpg", "results1.jpg", "results2.jpg"],
+    question: "En una salidita a comer, ¿cuál es tu primera elección ?",
+    choices: ["preguntas/comida/7.png", "preguntas/comida/8.png", "preguntas/comida/9.png", "preguntas/lugar/14.png"],
     correctAnswer: 2
 }, {
-    question: "Pregunta 4",
-    choices: ["results2.jpg", "results1.jpg", "results2.jpg", "results1.jpg"],
+    question: "Cuando pones tu playlist, ¿qué es lo primero que suena?",
+    choices: ["preguntas/musica/4.png", "preguntas/musica/5.png", "preguntas/musica/6.png", "preguntas/lugar/14.png"],
     correctAnswer: 3
 }, {
-    question: "Pregunta 5",
-    choices: ["results1.jpg", "results2.jpg", "results1.jpg", "results2.jpg"],
+    question: "¿Cómo imaginas un fin de semana perfecto?",
+    choices: ["preguntas/plan/1.png", "preguntas/plan/2.png", "preguntas/plan/3.png", "preguntas/lugar/14.png"],
     correctAnswer: 0
 }];
 
@@ -171,7 +201,10 @@ var quizOver = false;
 
 $(document).ready(function () {
 
+
+
     // Display the first question
+    //selectordesexo();
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
 
@@ -182,7 +215,7 @@ $(document).ready(function () {
             value = $("input[type='radio']:checked").val();
 
             if (value == undefined) {
-                $(document).find(".quizMessage").text("Please select an answer");
+                $(document).find(".quizMessage").text("Seleccione una respuesta");
                 $(document).find(".quizMessage").show();
             } else {
                 // TODO: Remove any message -> not sure if this is efficient to call this each time....
@@ -234,8 +267,15 @@ function displayCurrentQuestion() {
     var choice;
     for (i = 0; i < numChoices; i++) {
         choice = questions[currentQuestion].choices[i];
-        $('<div class="col-md-6 col-sm-6 col-xs-6"><label><input type="radio" value=' + i + ' name="dynradio" /><img src="' + choice + '"></label></div>').appendTo(choiceList);
+        $('<div class="col-md-6 col-sm-6 col-xs-6 text-center"><label><input type="radio" value=' + i + ' name="dynradio" /><img src="' + choice + '"></label></div>').appendTo(choiceList);
     }
+}
+
+function selectordesexo() {
+    
+ 
+        
+ 
 }
 
 function resetQuiz() {
