@@ -16,7 +16,7 @@
 <!-- BODY -->
 	<style>
 	body{
-		background: url('fondo.jpg');
+		/*background: url('fondo.jpg');*/
 	}
  h1 {
     font-family:'Rokkitt', serif;
@@ -132,27 +132,30 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
     	</div>
         
 
-        <!-- <div class="container sexo" style="height: 800px;margin-bottom: 300px;">
+         <!-- 
+	
+
+         <div class="container sexo" style="height: 800px;margin-bottom: 300px;">
         	<div class="col-md-12 text-center">SELECCIONA TU SEXO</div>
         	<div class="col-md-6 text-center">HOMBRE</div>
         	<div class="col-md-6 text-center">MUJER</div>
         </div>
 
         <div class="container informacion"></div>
-
+-->
         <div class="container configuracion" style="height: 800px;margin-bottom: 300px;">
         	<div class="col-md-12 text-center">SELECCIONE LOS PRODUCTOS DISPONIBLES (Minimo 2)</div>
         	<div class="col-md-6 text-center">PRODUCTO 1</div>
         	<div class="col-md-6 text-center">PRODUCTO 2</div>
         	<div class="col-md-6 text-center">PRODUCTO 3</div>
         	<div class="col-md-6 text-center">PRODUCTO 4</div>
-        </div> -->
+        </div> 
 
         <div class="container question"></div>
         <div class="container choiceList"></div>
         <div class="container quizMessage"></div>
         <div class="container result"></div>
-        <div class="container nextButton">Siguiente pregunta</div>
+        <div class="container nextButton pregunt">Siguiente pregunta</div>
         <br>
     </div>
 
@@ -198,6 +201,8 @@ var questions = [{
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
+var arr = [];
+i = 0;
 
 $(document).ready(function () {
 
@@ -209,7 +214,8 @@ $(document).ready(function () {
     $(this).find(".quizMessage").hide();
 
     // On clicking next, display the next question
-    $(this).find(".nextButton").on("click", function () {
+    //$(this).find(".nextButton").on("click", function () {
+    $(this).on("click",'.pregunt', function () {	
         if (!quizOver) {
 
             value = $("input[type='radio']:checked").val();
@@ -220,10 +226,16 @@ $(document).ready(function () {
             } else {
                 // TODO: Remove any message -> not sure if this is efficient to call this each time....
                 $(document).find(".quizMessage").hide();
+                
+                // if (value == questions[currentQuestion].correctAnswer) {
+                //     correctAnswers++;
 
-                if (value == questions[currentQuestion].correctAnswer) {
-                    correctAnswers++;
-                }
+                // }
+
+                
+				arr.push(value);
+				        //I should store id in an array
+				//alert(arr);
 
                 currentQuestion++; // Since we have already displayed the first question on DOM ready
                 if (currentQuestion < questions.length) {
@@ -267,7 +279,7 @@ function displayCurrentQuestion() {
     var choice;
     for (i = 0; i < numChoices; i++) {
         choice = questions[currentQuestion].choices[i];
-        $('<div class="col-md-6 col-sm-6 col-xs-6 text-center"><label><input type="radio" value=' + i + ' name="dynradio" /><img src="' + choice + '"></label></div>').appendTo(choiceList);
+        $('<div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center"><label><input type="radio" value=' + i + ' name="dynradio" /><img src="' + choice + '"></label></div>').appendTo(choiceList);
     }
 }
 
@@ -287,7 +299,8 @@ function resetQuiz() {
 function displayScore() {
 	var choiceList = $(document).find(".quizContainer > .choiceList");
 	$(choiceList).find("div").remove();
-    $(document).find(".quizContainer > .result").html("<span style='font-size:30px'>Lograste: " + correctAnswers + " de: " + questions.length + "</span>");
+    //$(document).find(".quizContainer > .result").html("<span style='font-size:30px'>Lograste: " + correctAnswers + " de: " + questions.length + "</span>");
+    $(document).find(".quizContainer > .result").html("<span style='font-size:30px'>Tus respuestas: " + arr + "</span>");
     $(document).find(".quizContainer > .result").show();
 }
 
