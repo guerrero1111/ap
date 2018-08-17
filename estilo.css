@@ -1,5 +1,6 @@
 	body{
-		/*background: url('fondo.jpg');*/
+		background: url('fondo.jpg');
+        color:#ffffff;
 	}
  h1 {
     font-family:'Rokkitt', serif;
