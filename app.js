@@ -150,7 +150,8 @@ jQuery(document).ready(function($) {
 
         var choice;
         for (i = 0; i < numopciones; i++) {
-            choice = preguntas[lapregunta_actual].opciones[i];
+            choice = preguntas[lapregunta_actual].opciones[i]+ '?' + (new Date()).getTime();
+            //console.log(choice);
             $('<div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center"><label><input type="radio" value=' + i + ' name="radioopcion" /><img src="' + choice + '"></label></div>').appendTo(bloque_opciones);
         }
 
