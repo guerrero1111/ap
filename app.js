@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
     
-    //valores por defecto
 
     var preguntas = [{
         lapregunta: "1-Es momento de compartir con tus amigos, ¿en dónde prefieres estar?",
@@ -31,6 +30,7 @@ jQuery(document).ready(function($) {
     i = 0;
 
 
+    var orden = [2,1,3,0];  
 
     var persona = 0;
     var cantJuegos=5;  
@@ -38,9 +38,6 @@ jQuery(document).ready(function($) {
 
     
     $(this).on("click",'.pregunt', function () {    
-
-        //var campo = ( $("input[type='radio']:checked").attr('name') );
-        //var valor = ( $("input[type='radio']:checked").val() );
 
         var campo = ( $(this).find("input[type='radio']").attr('name') );
         var valor = ( $(this).find("input[type='radio']").val() );
@@ -59,7 +56,7 @@ jQuery(document).ready(function($) {
 
 
            default: 
-               //alert('Default case');
+               
                break;
         }
 
@@ -77,10 +74,38 @@ jQuery(document).ready(function($) {
                
                   
                   
-                  if (arr.length>=cantJuegos)  {
+                  if (arr.length>=cantJuegos)  {  //La respuesta
                      niveles++;
-                     alert(arr);
-                     //La respuesta
+
+                        //encontrar los elementos que se repiten
+                        
+                        var recipientsArray = arr.sort(); 
+
+                        var elemDuplicados = [];
+                        for (var i = 0; i < recipientsArray.length - 1; i++) {
+                            if (recipientsArray[i + 1] == recipientsArray[i]) {
+                                elemDuplicados.push(recipientsArray[i]);
+                            }
+                        }
+
+
+                        var menor = 100;  
+                         $.each(elemDuplicados, function( index, value ) {
+                           //alert(  orden[value] );
+                           if (menor>orden[value]) {
+                                menor = value;
+                           }
+                        });
+
+                       var imagen = 'img/resultados/'+persona+'/c'+menor+'.png'+ '?' + (new Date()).getTime();   // lo ultimo despues del ? es para limpiar cache d imagen
+
+                       $('.principal').append('<div class="container resultado"></div>');
+
+
+                       var bloque_pregunta = $(document).find(".quizContainer > .principal > .resultado");  //busca el contenedor donde poner la pregunta
+
+                       bloque_pregunta.append('<div class="col-md-6 col-sm-6 col-xs-6"><img src="' + imagen + '"></div>');
+                       
                   } else {  //jugar
                         pregunta_actual();
                         lapregunta_actual++;
@@ -88,13 +113,6 @@ jQuery(document).ready(function($) {
 
                break;
         
-             
-               
-                  
-                  
-
-               
-
 
 
            default: 
@@ -109,13 +127,7 @@ jQuery(document).ready(function($) {
     });   
 
 
-/*
-after() y before()
-each() y animate()
-position() y offset()
-remove() y empty()
 
-*/
 
 
 
