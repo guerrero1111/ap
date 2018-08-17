@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
                             }
                         }
 
-
+                        //alert(  arr );
                         var menor = 100;  
                          $.each(elemDuplicados, function( index, value ) {
                            //alert(  orden[value] );
@@ -105,6 +105,9 @@ jQuery(document).ready(function($) {
                        var bloque_pregunta = $(document).find(".quizContainer > .principal > .resultado");  //busca el contenedor donde poner la pregunta
 
                        bloque_pregunta.append('<div class="col-md-6 col-sm-6 col-xs-6"><img src="' + imagen + '"></div>');
+                       bloque_pregunta.append('<div class="col-md-6 col-sm-6 col-xs-6"><button id="inicio" type="button" onclick="javascript:window.location.reload();">Inicio</button></div>');
+
+                       
                        
                   } else {  //jugar
                         pregunta_actual();
@@ -154,6 +157,8 @@ jQuery(document).ready(function($) {
             //console.log(choice);
             $('<div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center"><label><input type="radio" value=' + i + ' name="radioopcion" /><img src="' + choice + '"></label></div>').appendTo(bloque_opciones);
         }
+
+        
 
 
     }
