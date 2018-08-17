@@ -1,5 +1,6 @@
 	body{
 		background: url('fondo.jpg');
+            background-attachment: fixed;
         color:#ffffff;
 	}
  h1 {
@@ -31,6 +32,25 @@ p {
     -webkit-box-shadow: 10px 10px 5px #888;
     box-shadow: 10px 10px 5px #888;
     position: relative;
+}
+.lapregunta,.preguntaentrada{
+        text-align: center;
+    font-size: 32px;
+    padding: 31px;
+}
+.imagenresultado img{
+    width: auto !important;
+        max-width: 100%;
+}
+#inicio{
+        border: 0px;
+    background: #000000;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 22px;
+    margin-bottom: 55px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 .nextButton {
     box-shadow: 3px 3px 5px #888;

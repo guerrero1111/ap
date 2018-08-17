@@ -104,8 +104,8 @@ jQuery(document).ready(function($) {
 
                        var bloque_pregunta = $(document).find(".quizContainer > .principal > .resultado");  //busca el contenedor donde poner la pregunta
 
-                       bloque_pregunta.append('<div class="col-md-6 col-sm-6 col-xs-6"><img src="' + imagen + '"></div>');
-                       bloque_pregunta.append('<div class="col-md-6 col-sm-6 col-xs-6"><button id="inicio" type="button" onclick="javascript:window.location.reload();">Inicio</button></div>');
+                       bloque_pregunta.append('<div class="col-md-12 col-sm-12 col-xs-12 text-center imagenresultado"><img src="' + imagen + '"></div>');
+                       bloque_pregunta.append('<div class="col-md-12 col-sm-12 col-xs-12 text-center"><button id="inicio" type="button" onclick="javascript:window.location.reload();">Inicio</button></div>');
 
                        
                        
