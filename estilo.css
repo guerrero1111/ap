@@ -2,6 +2,8 @@
 		background: url('fondo.jpg');
             background-attachment: fixed;
         color:#ffffff;
+            border: 2px solid #9c5f05;
+        margin:20px;
 	}
  h1 {
     font-family:'Rokkitt', serif;
@@ -19,8 +21,19 @@ input[type=radio] {
     width: 20px;
     height: 2em;
 }
+#uname{
+    color: #000000;
+    width: 150px;
+    text-align: center;
+    border-radius: 14px;
+    border: 0px;
+}
 p {
     font-family:'Rokkitt', serif;
+}
+footer label{
+    font-size: 15px;
+    font-weight: lighter;
 }
 /* Quiz Classes */
  .quizContainer {
@@ -28,15 +41,17 @@ p {
     border-radius: 6px;    
     margin: auto;
     padding-top: 5px;
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 10px 10px 5px #888;
+    
     position: relative;
+        margin-bottom: 44px;
 }
 .lapregunta,.preguntaentrada{
         text-align: center;
     font-size: 32px;
-    padding: 31px;
+    padding: 19px;
+}
+.preguntaestulos{
+    font-size: 21px;
 }
 .imagenresultado img{
     width: auto !important;
@@ -48,6 +63,7 @@ p {
     padding: 10px 20px;
     border-radius: 9px;
     font-size: 22px;
+    margin-top: 20px;
     margin-bottom: 55px;
     font-weight: bold;
     text-transform: uppercase;
