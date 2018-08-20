@@ -13,12 +13,7 @@
   <plugin name="cordova-plugin-device" spec="1.1.2" />
   <plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
   <preference name="SplashScreen" value="screen"/>
-  <splash src="splash.png" />
-  <platform name="android">
-      <splash src="splash.png" density="port-hdpi"/>
-      <splash src="splash.png" density="port-ldpi"/>
-      <splash src="splash.png" density="port-mdpi"/>
-      <splash src="splash.png" density="port-xhdpi"/>
-   </platform>
+  <splash src="www/splash.png" />
+  
   <icon src="logo1.png" />
 </widget>
