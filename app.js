@@ -2,23 +2,23 @@ jQuery(document).ready(function($) {
     
 
     var preguntas = [{
-        lapregunta: "1-Es momento de compartir con tus amigos, ¿en dónde prefieres estar?",
+        lapregunta: "Es momento de compartir con tus amigos, ¿en dónde prefieres estar?",
         opciones: ["preguntas/lugar/13.png", "preguntas/lugar/14.png", "preguntas/lugar/15.png", "preguntas/lugar/14.png"],
         respuesta_correcta: 0
     }, {
-        lapregunta: "2- Llegó el fin de semana, ¿a quién llamas para ver qué plan?",
+        lapregunta: "Llegó el fin de semana, ¿a quién llamas para ver qué plan?",
         opciones: ["preguntas/compania/10.png", "preguntas/compania/11.png", "preguntas/compania/12.png", "preguntas/lugar/14.png"],
         respuesta_correcta: 1
     }, {
-        lapregunta: "3- En una salidita a comer, ¿cuál es tu primera elección ?",
+        lapregunta: "En una salidita a comer, ¿cuál es tu primera elección ?",
         opciones: ["preguntas/comida/7.png", "preguntas/comida/8.png", "preguntas/comida/9.png", "preguntas/lugar/14.png"],
         respuesta_correcta: 2
     }, {
-        lapregunta: "4- Cuando pones tu playlist, ¿qué es lo primero que suena?",
+        lapregunta: "Cuando pones tu playlist, ¿qué es lo primero que suena?",
         opciones: ["preguntas/musica/4.png", "preguntas/musica/5.png", "preguntas/musica/6.png", "preguntas/lugar/14.png"],
         respuesta_correcta: 3
     }, {
-        lapregunta: "5- ¿Cómo imaginas un fin de semana perfecto?",
+        lapregunta: "¿Cómo imaginas un fin de semana perfecto?",
         opciones: ["preguntas/plan/1.png", "preguntas/plan/2.png", "preguntas/plan/3.png", "preguntas/lugar/14.png"],
         respuesta_correcta: 0
     }];
@@ -64,7 +64,7 @@ jQuery(document).ready(function($) {
           $('.principal').children().remove();
           
           //agregar 2 contenedores "preguntas" y "opciones"
-          $('.principal').append('<div class="container lapregunta"></div>');
+          $('.principal').append('<div class="container lapregunta preguntaestulos"></div>');
           $('.principal').append('<div class="container bloque_opciones"></div>');    
 
         
@@ -98,14 +98,15 @@ jQuery(document).ready(function($) {
                         });
 
                        var imagen = 'img/resultados/'+persona+'/c'+menor+'.png'+ '?' + (new Date()).getTime();   // lo ultimo despues del ? es para limpiar cache d imagen
-
+                       
+                       $('.contlogo').remove();
                        $('.principal').append('<div class="container resultado"></div>');
 
 
                        var bloque_pregunta = $(document).find(".quizContainer > .principal > .resultado");  //busca el contenedor donde poner la pregunta
 
                        bloque_pregunta.append('<div class="col-md-12 col-sm-12 col-xs-12 text-center imagenresultado"><img src="' + imagen + '"></div>');
-                       bloque_pregunta.append('<div class="col-md-12 col-sm-12 col-xs-12 text-center"><button id="inicio" type="button" onclick="javascript:window.location.reload();">Inicio</button></div>');
+                       bloque_pregunta.append('<div class="col-md-12 col-sm-12 col-xs-12 text-center"><button id="inicio" type="button" onclick="javascript:window.location.reload();">REINICIAR</button></div>');
 
                        
                        
