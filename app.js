@@ -3,23 +3,23 @@ jQuery(document).ready(function($) {
 
     var preguntas = [{
         lapregunta: "Es momento de compartir con tus amigos, ¿en dónde prefieres estar?",
-        opciones: ["preguntas/lugar/13.png", "preguntas/lugar/14.png", "preguntas/lugar/15.png", "preguntas/lugar/14.png"],
+        opciones: ["preguntas/lugar/13.png", "preguntas/lugar/14.png", "preguntas/lugar/15.png", "preguntas/lugar/16.png"],
         respuesta_correcta: 0
     }, {
         lapregunta: "Llegó el fin de semana, ¿a quién llamas para ver qué plan?",
-        opciones: ["preguntas/compania/10.png", "preguntas/compania/11.png", "preguntas/compania/12.png", "preguntas/lugar/14.png"],
+        opciones: ["preguntas/compania/10.png", "preguntas/compania/11.png", "preguntas/compania/12.png", "preguntas/compania/12a.png"],
         respuesta_correcta: 1
     }, {
         lapregunta: "En una salidita a comer, ¿cuál es tu primera elección ?",
-        opciones: ["preguntas/comida/7.png", "preguntas/comida/8.png", "preguntas/comida/9.png", "preguntas/lugar/14.png"],
+        opciones: ["preguntas/comida/7.png", "preguntas/comida/8.png", "preguntas/comida/9.png", "preguntas/comida/9a.png"],
         respuesta_correcta: 2
     }, {
         lapregunta: "Cuando pones tu playlist, ¿qué es lo primero que suena?",
-        opciones: ["preguntas/musica/4.png", "preguntas/musica/5.png", "preguntas/musica/6.png", "preguntas/lugar/14.png"],
+        opciones: ["preguntas/musica/4.png", "preguntas/musica/5.png", "preguntas/musica/6.png", "preguntas/musica/6a.png"],
         respuesta_correcta: 3
     }, {
         lapregunta: "¿Cómo imaginas un fin de semana perfecto?",
-        opciones: ["preguntas/plan/1.png", "preguntas/plan/2.png", "preguntas/plan/3.png", "preguntas/lugar/14.png"],
+        opciones: ["preguntas/plan/1.png", "preguntas/plan/2.png", "preguntas/plan/3.png", "preguntas/plan/3a.png"],
         respuesta_correcta: 0
     }];
 

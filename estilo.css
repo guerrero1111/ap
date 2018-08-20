@@ -31,19 +31,25 @@ input[type=radio] {
 p {
     font-family:'Rokkitt', serif;
 }
+footer .container{
+    margin-bottom: 15px;
+}
+.principal{
+    margin-bottom: 40px;
+}
 footer label{
     font-size: 15px;
     font-weight: lighter;
 }
 /* Quiz Classes */
  .quizContainer {
-   
+   margin-bottom: 20px;
     border-radius: 6px;    
     margin: auto;
     padding-top: 5px;
     
     position: relative;
-        margin-bottom: 44px;
+    
 }
 .lapregunta,.preguntaentrada{
         text-align: center;
