@@ -16,10 +16,6 @@
   <splash src="splash.png" platform="android" qualifier="ldpi" />
   <splash src="splash.png" platform="android" qualifier="mdpi" />
   <splash src="splash.png" platform="android" qualifier="hdpi" />
-  <splash src="splash.png" platform="android" qualifier="xhdpi" />
-  <splash src="splash.png" platform="android" qualifier="fr-xhdpi" />
-  <splash src="splash.png" platform="android" qualifier="port-xxhdpi" />
-  <splash src="splash.png" platform="android" qualifier="land-xxhdpi" />
-  <splash src="splash.png" platform="android" qualifier="xxxhdpi" />
+
   <icon src="logo1.png" />
 </widget>
