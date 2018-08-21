@@ -13,7 +13,7 @@
   <plugin name="cordova-plugin-inappbrowser" spec="1.3.0" />
   <plugin name="cordova-plugin-device" spec="1.1.2" />
   <plugin name="cordova-plugin-splashscreen" source="npm"/>
-    
-  <splash src="splash.png" />
+  <gap:splash gap:platform="android" src="splash.png" />
+
   <icon src="logo1.png" />
 </widget>
