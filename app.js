@@ -30,7 +30,39 @@ jQuery(document).ready(function($) {
     i = 0;
 
 
-    var orden = [2,1,3,0];  
+     
+    //[2,1,3,0];
+    
+
+//////////
+
+    todo = [0,1,2,3]; //sirve como base solo para eliminar opciones "imagenes"
+    var orden = [2,1,3,0];
+    var  temporal = [];
+     Object.assign(temporal,orden);
+  
+
+    orden.sort();
+                     //todo.filter(value => -1 !== orden.indexOf(value)) // los bueno
+   var eliminar = todo.filter(value => -1 == orden.indexOf(value)) //los que hay q eliminar
+   eliminar.reverse();
+
+   //console.log(eliminar);
+
+    for ( var i=0; i<preguntas.length; i++ ) {
+        for ( var j=0; j<=eliminar.length-1; j++ )  {
+          preguntas[i].opciones.splice(eliminar[j],1);
+        }
+    }
+
+    orden= temporal; //[2,1,3,0];
+
+   //console.log(orden);
+
+///////////
+
+
+
 
     var persona = 0;
     var cantJuegos=5;  
@@ -81,21 +113,40 @@ jQuery(document).ready(function($) {
                         
                         var recipientsArray = arr.sort(); 
 
+                        //console.log(recipientsArray);
+
                         var elemDuplicados = [];
                         for (var i = 0; i < recipientsArray.length - 1; i++) {
                             if (recipientsArray[i + 1] == recipientsArray[i]) {
-                                elemDuplicados.push(recipientsArray[i]);
+                                    elemDuplicados.push(recipientsArray[i]);
                             }
                         }
 
+                        var segundaVuelta = [];
+                        for (var i = 0; i < elemDuplicados.length - 1; i++) {
+                            if (elemDuplicados[i + 1] == elemDuplicados[i]) {
+                                    segundaVuelta.push(elemDuplicados[i]);
+                            }
+                        }
+
+                        
+                         elemDuplicados= (segundaVuelta.length>0) ? segundaVuelta  : elemDuplicados;
+                        
+
+
+                        //console.log(elemDuplicados);
+
                         //alert(  arr );
                         var menor = 100;  
+
+                       // console.log(elemDuplicados);
                          $.each(elemDuplicados, function( index, value ) {
-                           //alert(  orden[value] );
                            if (menor>orden[value]) {
-                                menor = value;
+                                menor = orden[value];
                            }
+
                         });
+                         //console.log(menor);
 
                        var imagen = 'img/resultados/'+persona+'/c'+menor+'.png'+ '?' + (new Date()).getTime();   // lo ultimo despues del ? es para limpiar cache d imagen
 
