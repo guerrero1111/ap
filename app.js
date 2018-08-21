@@ -28,16 +28,61 @@ jQuery(document).ready(function($) {
     var quizOver = false;
     var arr = [];
     i = 0;
+    var orden = [];
+
+    /*
+if (localStorage.getItem("infiniteScrollEnabled") === null) {
+  //...
+}
+    */
+
+    //if (typeof(localStorage.getItem('configuraciones')) != "undefined") {
+    if (localStorage.getItem("configuraciones") === null) {    //sino existe la variable configuraciones q la cree
+
+          $.each($('.configuraciones > div > input[type="checkbox"]:checked'), function(indice, valor){
+             orden.push(  parseInt($(this).val())   ) ;
+          });
+
+          localStorage.setItem('configuraciones',orden);
+    }
+
+    //quitar todos los checked
+      $('.configuraciones > div > input[type="checkbox"]:checked').prop('checked', false);
+
+     //crear la variable orden 
+     arreglo_temp = localStorage.getItem('configuraciones').split(',');
+     for ( var i=0; i<preguntas.length-1; i++ ) {
+      orden.push( parseInt(arreglo_temp[i]) ); // = localStorage.getItem('configuraciones').split(',');
+      //lo dibujo nuevamente
+      $('.configuraciones > div > input[type="checkbox"][value="'+arreglo_temp[i]+'"]').prop('checked', true);      
+     } 
+
 
 
      
+
+     $(this).on("click",'input[type="button"][value="Guardar"]', function () {    
+       // alert('sad');
+          orden =[]; //vacio orden y guardo uno nuevo
+          $.each($('.configuraciones > div > input[type="checkbox"]:checked'), function(indice, valor){
+             orden.push(  parseInt($(this).val())   ) ;
+          });
+
+          localStorage.setItem('configuraciones',orden);
+          window.location.reload();
+
+     });
+
+
+     
+     console.log(orden);
     //[2,1,3,0];
     
 
 //////////
 
     todo = [0,1,2,3]; //sirve como base solo para eliminar opciones "imagenes"
-    var orden = [2,1,3,0];
+    //var orden = [2,1,3,0];
     var  temporal = [];
      Object.assign(temporal,orden);
   
