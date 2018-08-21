@@ -2,9 +2,9 @@
         <head>
         	<meta charset="utf-8">
         	<meta name="viewport" content="width=device-width, initial-scale=1">
-        	<title>Personality Test</title>
+        	<title>CASA SAUZA</title>
         	<!-- ANIMATE CSS -->
-
+             
         	<!-- FONTAWESOME -->
         	<!-- Latest compiled and minified CSS -->
         	<link rel="stylesheet" href="bootstrap.css">
@@ -22,31 +22,59 @@
 
 
             <div class="quizContainer row">
-            	<div class="container text-center">
+            	<div class="container text-center contlogo">
             		<img class="logo" src="logo1.png" style="width: auto;">    		
             	</div>
                 
                
-                
+                <div class="container configuracion" style="border:3px solid #ffffff">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center ">Configura las opciones</div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right" style="padding-right: 0px !important;">
+                       <input type="checkbox" name="elegir" value="o1"> Opción 1
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left" style="padding-left:0px !important;">
+                       <input type="checkbox" name="elegir" value="02"> Opción 2
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right" style="padding-right: 0px !important;">
+                       <input type="checkbox" name="elegir" value="o3"> Opción 3
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left" style="padding-left:0px !important;">
+                       <input type="checkbox" name="elegir" value="o4"> Opción 4
+                    </div>
+                     <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" value="Guardar"></div>
+                </div>
 
 
                 
                     <!-- <div class="container sexo" style="height: 800px;margin-bottom: 300px;"> -->
 
-                    <div class="container configuracion principal" style="height: 800px;margin-bottom: 300px;">
+                    <div class="container configuracion principal" style="">
+
                         
-                        <div class="col-md-12 text-center">SELECCIONA TU SEXO</div>
+                        <div class="col-md-12 text-center preguntaentrada">DESCUBRE <br>¿CUÁL ES TU TEQUILA?</div>
                         
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center">
+                        <div class="col-md-12 text-center preguntaentrada">EDAD</div>
+
+                         <div class="col-md-12 text-center preguntaentrada"><input type="text" id="uname" name="uname" required
+               minlength="2" maxlength="2" /></div>
+
+                        <div class="col-md-12 text-center preguntaentrada">SEXO</div>
+                        
+                        
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right" style="padding-right: 0px !important;">
                             <label>
-                                <input type="radio" value="1" name="persona"><img src="img/hombre.jpg">
+                                <input type="radio" value="2" name="persona"><img src="preguntas/fem.png">
                             </label>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center">
+                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left" style="padding-left:0px !important;">
                             <label>
-                                <input type="radio" value="2" name="persona"><img src="img/mujer.png">
+                                <input type="radio" value="1" name="persona"><img src="preguntas/mas.png">
                             </label>
                         </div>
+
+                       
+                
 
                     </div>
 
@@ -55,7 +83,25 @@
             
 
             
-
+<footer>
+    <div class="container">
+       <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left">
+            <label>
+                www.alcoholinformate.org.mx
+            </label>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right">
+            <label>
+                EVITA EL EXCESO
+            </label>
+        </div>
+     </div>
+    <!-- <div class="container">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <img src="footer.png" style="max-width: 100% !important">
+        </div>
+    </div> -->
+</footer>
         </body>
 </html>
 
