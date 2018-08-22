@@ -419,6 +419,10 @@ $(".reset").click(function() {
   localStorage.setItem('anejo',0);
   localStorage.setItem('reposado',0);
   localStorage.setItem('innovador',0);
+    localStorage.setItem('1plata',0);
+  localStorage.setItem('1anejo',0);
+  localStorage.setItem('1reposado',0);
+  localStorage.setItem('1innovador',0);
   window.location.reload();
 
 });
