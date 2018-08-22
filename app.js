@@ -1,5 +1,11 @@
 jQuery(document).ready(function($) {
-    
+    $('.configuraciones').hide();
+
+
+$( ".activarsi" ).click(function() {
+   $('.configuraciones').show();
+   $('.icong').hide();
+});
 
     var preguntas = [{
         lapregunta: "Es momento de compartir con tus amigos, ¿en dónde prefieres estar?",
@@ -73,8 +79,10 @@ jQuery(document).ready(function($) {
           });
 
           localStorage.setItem('configuraciones',orden);
-          window.location.reload();
 
+          window.location.reload();
+          $('.configuraciones').hide();
+          $('.icong').show();
      });
 
 
@@ -281,6 +289,35 @@ jQuery(document).ready(function($) {
 
     }
 
+
+$("#uname").on('change', function(){
+    document.getElementById("demo").innerHTML = "";
+      varial = $("#uname").val();
+      if (varial < 18) {
+          text = "Debes ser mayor de Edad";
+          document.getElementById("demo").innerHTML = text;
+          $('.esa img').hide();
+    } else {
+        $('.esa img').show();
+        $('.guardabtna').hide();
+      }
+
+});
+$(".guardabtna").click(function() {
+  document.getElementById("demo").innerHTML = "";
+      varial = $("#uname").val();
+      if (varial < 18) {
+          text = "Debes ser mayor de Edad";
+          document.getElementById("demo").innerHTML = text;
+          $('.esa img').hide();
+    } else {
+        $('.esa img').show();
+        $('.guardabtna').hide();
+      }
+
+});
+
+   
 
 }); //fin
 

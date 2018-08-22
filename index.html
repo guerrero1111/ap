@@ -26,22 +26,52 @@
             		<img class="logo" src="logo1.png" style="width: auto;">    		
             	</div>
                 
+              <!--   <div class="container configuraciones" style="border:3px solid #ffffff">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">Configura las opciones</div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
+                            <div class="switch demo3">
+                                <input type="checkbox" name="elegir" value="2" checked>
+                                <label><i></i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
+                            <div class="switch demo3">
+                                <input type="checkbox" name="elegir" value="1" checked>
+                                <label><i></i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
+                            <div class="switch demo3">
+                                <input type="checkbox" name="elegir" value="3" checked>
+                                <label><i></i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
+                            <div class="switch demo3">
+                                <input type="checkbox" name="elegir" value="0" checked>
+                                <label><i></i></label>
+                            </div>
+                        </div>
+                    
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="guardabtn" value="Guardar"></div>
+                </div> -->
+
                
                 <div class="container configuraciones" style="border:3px solid #ffffff">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center ">Configura las opciones</div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right" style="padding-right: 0px !important;">
-                       <input type="checkbox" name="elegir" value="2" checked> Opción 0
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">Configura las opciones</div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
+                       <input type="checkbox" name="elegir" value="2" checked><span class="checkmark">Plata</span>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left" style="padding-left:0px !important;">
-                       <input type="checkbox" name="elegir" value="1" checked> Opción 1
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-left:0px !important;">
+                       <input type="checkbox" name="elegir" value="1" checked><span class="checkmark">Reposado</span>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right" style="padding-right: 0px !important;">
-                       <input type="checkbox" name="elegir" value="3" checked> Opción 2
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
+                       <input type="checkbox" name="elegir" value="3" checked><span class="checkmark">Innovador</span>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left" style="padding-left:0px !important;">
-                       <input type="checkbox" name="elegir" value="0" checked> Opción 3
+                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-left:0px !important;">
+                       <input type="checkbox" name="elegir" value="0" checked><span class="checkmark">Añejo</span>
                     </div>
-                     <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" value="Guardar"></div>
+                     <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="guardabtn" value="Guardar"></div>
                 </div>
 
 
@@ -55,21 +85,25 @@
                         
                         <div class="col-md-12 text-center preguntaentrada">EDAD</div>
 
-                         <div class="col-md-12 text-center preguntaentrada"><input type="text" id="uname" name="uname" required
-               minlength="2" maxlength="2" /></div>
+                         <div class="col-md-12 text-center preguntaentrada">
+                            <input type="text" id="uname" name="uname" required minlength="2" maxlength="2" />
+                            <span id="demo" style="width:100%; display: inline-block;font-size: 18px;"></span>
+                        </div>
+                        <div class="col-md-12 text-center preguntaentrada"><input type="button" class="guardabtna" value="CONTINUAR"></div>
 
-                        <div class="col-md-12 text-center preguntaentrada">SEXO</div>
+
+                        <div class="col-md-12 text-center preguntaentrada sexbtn">SEXO</div>
                         
                         
 
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right" style="padding-right: 0px !important;">
+                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-right" style="padding-right: 0px !important;">
                             <label>
                                 <input type="radio" value="2" name="persona"><img src="preguntas/fem.png">
                             </label>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left" style="padding-left:0px !important;">
+                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-left" style="padding-left:0px !important;">
                             <label>
-                                <input type="radio" value="1" name="persona"><img src="preguntas/mas.png">
+                                <input type="radio"  value="1" name="persona"><img src="preguntas/mas.png">
                             </label>
                         </div>
 
@@ -92,8 +126,9 @@
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right">
             <label>
-                EVITA EL EXCESO
+                EVITA EL EXCESO 
             </label>
+            <span class="activarsi"><img class="icong" src="icon.png" style="margin-bottom: 0px !important"></span>
         </div>
      </div>
     <!-- <div class="container">
