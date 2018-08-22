@@ -2,6 +2,17 @@ jQuery(document).ready(function($) {
     $('.configuraciones').hide();
 
 
+if (localStorage.getItem("conteo") !== null) {    //sino existe la variable configuraciones q la cree
+                      $('#conteo').text(localStorage.getItem('conteo'));
+                  } else {
+                      $('#conteo').text('0');
+                  }
+
+
+                    
+                    
+
+
 $( ".activarsi" ).click(function() {
    $('.configuraciones').show();
    $('.icong').hide();
@@ -242,6 +253,9 @@ $( ".activarsi" ).click(function() {
                        localStorage.setItem('conteo', (parseInt(localStorage.getItem('conteo'))+1) );
                   }
 
+
+                    //console.log(  localStorage.getItem('conteo')  );
+                    $('#conteo').text(localStorage.getItem('conteo'));
 
 
                        
