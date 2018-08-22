@@ -30,11 +30,8 @@ jQuery(document).ready(function($) {
     i = 0;
     var orden = [];
 
-    /*
-if (localStorage.getItem("infiniteScrollEnabled") === null) {
-  //...
-}
-    */
+    var imagen_eliminar = [3,1,0,2];
+
 
     //if (typeof(localStorage.getItem('configuraciones')) != "undefined") {
     if (localStorage.getItem("configuraciones") === null) {    //sino existe la variable configuraciones q la cree
@@ -52,9 +49,16 @@ if (localStorage.getItem("infiniteScrollEnabled") === null) {
      //crear la variable orden 
      arreglo_temp = localStorage.getItem('configuraciones').split(',');
      for ( var i=0; i<preguntas.length-1; i++ ) {
-      orden.push( parseInt(arreglo_temp[i]) ); // = localStorage.getItem('configuraciones').split(',');
-      //lo dibujo nuevamente
-      $('.configuraciones > div > input[type="checkbox"][value="'+arreglo_temp[i]+'"]').prop('checked', true);      
+      if  (arreglo_temp[i]!=undefined) 
+      {
+        orden.push( parseInt(arreglo_temp[i]) ); // = localStorage.getItem('configuraciones').split(',');
+        //lo dibujo nuevamente
+        $('.configuraciones > div > input[type="checkbox"][value="'+arreglo_temp[i]+'"]').prop('checked', true);      
+
+
+      }
+
+
      } 
 
 
@@ -75,7 +79,7 @@ if (localStorage.getItem("infiniteScrollEnabled") === null) {
 
 
      
-     console.log(orden);
+     //console.log(orden);
     //[2,1,3,0];
     
 
@@ -92,17 +96,34 @@ if (localStorage.getItem("infiniteScrollEnabled") === null) {
    var eliminar = todo.filter(value => -1 == orden.indexOf(value)) //los que hay q eliminar
    eliminar.reverse();
 
-   //console.log(eliminar);
+  // console.log(eliminar);
 
-    for ( var i=0; i<preguntas.length; i++ ) {
+    var definitivo_eliminar = [];
+
+    
         for ( var j=0; j<=eliminar.length-1; j++ )  {
-          preguntas[i].opciones.splice(eliminar[j],1);
+            definitivo_eliminar.push(imagen_eliminar[eliminar[j]]); 
+        }
+    
+
+
+    definitivo_eliminar.reverse();
+    //definitivo_eliminar=[1,0];
+    console.log(definitivo_eliminar);
+    for ( var i=0; i<preguntas.length; i++ ) {
+        for ( var j=0; j<=definitivo_eliminar.length-1; j++ )  {
+          preguntas[i].opciones.splice(  definitivo_eliminar[j]  ,1);
+          //console.log(i);
+          //console.log(definitivo_eliminar[j]);
         }
     }
 
+
     orden= temporal; //[2,1,3,0];
 
-   //console.log(orden);
+  /*console.log(preguntas);
+  console.log(orden);
+  */
 
 ///////////
 
