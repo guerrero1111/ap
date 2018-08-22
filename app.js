@@ -17,6 +17,29 @@ if (localStorage.getItem("mujeres") !== null) {    //sino existe la variable con
 } else {
     $('#mujeres').text('0');
 }
+
+if (localStorage.getItem("1plata") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1plata').text(localStorage.getItem('1plata'));
+} else {
+    $('#1plata').text('0');
+}
+if (localStorage.getItem("1anejo") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1anejo').text(localStorage.getItem('1anejo'));
+} else {
+    $('#1anejo').text('0');
+}
+if (localStorage.getItem("1reposado") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1reposado').text(localStorage.getItem('1reposado'));
+} else {
+    $('#1reposado').text('0');
+}
+if (localStorage.getItem("1innovador") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1innovador').text(localStorage.getItem('1innovador'));
+} else {
+    $('#1innovador').text('0');
+}
+
+
 if (localStorage.getItem("plata") !== null) {    //sino existe la variable configuraciones q la cree
     $('#plata').text(localStorage.getItem('plata'));
 } else {
@@ -303,28 +326,59 @@ $( ".activarsi" ).click(function() {
                                   }
                         }
 
-                        if (menor===2) {
+                        if (menor===2 && persona==="1") {
+                           if (localStorage.getItem("1plata") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1plata',1);
+                                  }  else {
+                                       localStorage.setItem('1plata', (parseInt(localStorage.getItem('1plata'))+1) );
+                                  }
+                        }
+                        if (menor===1 && persona==="1") {
+                           if (localStorage.getItem("1reposado") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1reposado',1);
+                                  }  else {
+                                       localStorage.setItem('1reposado', (parseInt(localStorage.getItem('1reposado'))+1) );
+                                  }
+                        }
+                        if (menor===3 && persona==="1") {
+                           if (localStorage.getItem("1anejo") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1anejo',1);
+                                  }  else {
+                                       localStorage.setItem('1anejo', (parseInt(localStorage.getItem('anejo'))+1) );
+                                  }
+                        }
+                         if (menor===0 && persona==="1") {
+                           if (localStorage.getItem("1innovador") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1innovador',1);
+                                  }  else {
+                                       localStorage.setItem('1innovador', (parseInt(localStorage.getItem('innovador'))+1) );
+                                  }
+                        }
+
+
+
+                        if (menor===2 && persona==="2") {
                            if (localStorage.getItem("plata") === null) {    //sino existe la variable configuraciones q la cree
                                       localStorage.setItem('plata',1);
                                   }  else {
                                        localStorage.setItem('plata', (parseInt(localStorage.getItem('plata'))+1) );
                                   }
                         }
-                        if (menor===1) {
+                        if (menor===1 && persona==="2") {
                            if (localStorage.getItem("reposado") === null) {    //sino existe la variable configuraciones q la cree
                                       localStorage.setItem('reposado',1);
                                   }  else {
                                        localStorage.setItem('reposado', (parseInt(localStorage.getItem('reposado'))+1) );
                                   }
                         }
-                        if (menor===3) {
+                        if (menor===3 && persona==="2") {
                            if (localStorage.getItem("anejo") === null) {    //sino existe la variable configuraciones q la cree
                                       localStorage.setItem('anejo',1);
                                   }  else {
                                        localStorage.setItem('anejo', (parseInt(localStorage.getItem('anejo'))+1) );
                                   }
                         }
-                         if (menor===0) {
+                         if (menor===0 && persona==="2") {
                            if (localStorage.getItem("innovador") === null) {    //sino existe la variable configuraciones q la cree
                                       localStorage.setItem('innovador',1);
                                   }  else {
