@@ -47,8 +47,24 @@ input[type=radio] {
     text-transform: uppercase;
     font-weight: bold;
 }
+.guardabtna{
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    border-radius: 7px;
+    border: 0px;
+    padding: 6px 20px;
+    color: #000000;
+    margin-top: 10px;
+    display: inline;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 19px;
+}
 .configuraciones{
     display: none;
+    max-width: 1170px;
+    margin-top: 30px;
 }
 .icong{
     width: 21px;

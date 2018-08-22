@@ -278,11 +278,23 @@ $("#uname").on('change', function(){
           $('.esa img').hide();
     } else {
         $('.esa img').show();
-
+        $('.guardabtna').hide();
       }
 
 });
+$(".guardabtna").click(function() {
+  document.getElementById("demo").innerHTML = "";
+      varial = $("#uname").val();
+      if (varial < 18) {
+          text = "Debes ser mayor de Edad";
+          document.getElementById("demo").innerHTML = text;
+          $('.esa img').hide();
+    } else {
+        $('.esa img').show();
+        $('.guardabtna').hide();
+      }
 
+});
 
    
 
