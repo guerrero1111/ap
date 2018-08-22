@@ -78,23 +78,26 @@
                            <span class="checkmark">Participantes: <span id="conteo"></span> </span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Hombres:</span>
+                           <span class="checkmark">Hombres:  <span id="hombres"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Mujeres:</span>
+                           <span class="checkmark">Mujeres:  <span id="mujeres"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Plata:</span>
+                           <span class="checkmark">Perfil Plata:  <span id="plata"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Reposado:</span>
+                           <span class="checkmark">Perfil Reposado:  <span id="reposado"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Añejo:</span>
+                           <span class="checkmark">Perfil Añejo:  <span id="anejo"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Innovador:</span>
+                           <span class="checkmark">Perfil Innovador:  <span id="innovador"></span></span>
                         </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="reset guardabtn" style="background-color: red;" value="REINICIAR CONTEO"></div>
+                        <hr>
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="regresar guardabtn" value="REGRESAR"></div>
                 </div>
 
 
@@ -109,7 +112,7 @@
                         <div class="col-md-12 text-center preguntaentrada">EDAD</div>
 
                          <div class="col-md-12 text-center preguntaentrada">
-                            <input type="text" id="uname" name="uname" required minlength="2" maxlength="2" />
+                            <input type="text" id="uname" name="uname" required minlength="2" maxlength="2" type="number"/>
                             <span id="demo" style="width:100%; display: inline-block;font-size: 18px;"></span>
                         </div>
                         <div class="col-md-12 text-center preguntaentrada"><input type="button" class="guardabtna" value="CONTINUAR"></div>
@@ -121,12 +124,12 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-right" style="padding-right: 0px !important;">
                             <label>
-                                <input type="radio" value="2" name="persona"><img src="preguntas/fem.png">
+                                <input type="radio" value="2" name="persona" class="pregunthombre"><img src="preguntas/fem.png">
                             </label>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-left" style="padding-left:0px !important;">
                             <label>
-                                <input type="radio"  value="1" name="persona"><img src="preguntas/mas.png">
+                                <input type="radio"  value="1" name="persona" class="preguntmujer"><img src="preguntas/mas.png">
                             </label>
                         </div>
 

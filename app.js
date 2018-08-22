@@ -3,11 +3,40 @@ jQuery(document).ready(function($) {
 
 
 if (localStorage.getItem("conteo") !== null) {    //sino existe la variable configuraciones q la cree
-                      $('#conteo').text(localStorage.getItem('conteo'));
-                  } else {
-                      $('#conteo').text('0');
-                  }
-
+    $('#conteo').text(localStorage.getItem('conteo'));
+} else {
+    $('#conteo').text('0');
+}
+if (localStorage.getItem("hombres") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#hombres').text(localStorage.getItem('hombres'));
+} else {
+    $('#hombres').text('0');
+}
+if (localStorage.getItem("mujeres") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#mujeres').text(localStorage.getItem('mujeres'));
+} else {
+    $('#mujeres').text('0');
+}
+if (localStorage.getItem("plata") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#plata').text(localStorage.getItem('plata'));
+} else {
+    $('#plata').text('0');
+}
+if (localStorage.getItem("anejo") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#anejo').text(localStorage.getItem('anejo'));
+} else {
+    $('#anejo').text('0');
+}
+if (localStorage.getItem("reposado") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#reposado').text(localStorage.getItem('reposado'));
+} else {
+    $('#reposado').text('0');
+}
+if (localStorage.getItem("innovador") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#innovador').text(localStorage.getItem('innovador'));
+} else {
+    $('#innovador').text('0');
+}
 
                     
                     
@@ -153,6 +182,8 @@ $( ".activarsi" ).click(function() {
     var cantJuegos=5;  
     var niveles = 1; //6;  //4+1(hombre)+1(resultado)  son 6niveles
 
+
+
     
     $(this).on("click",'.pregunt', function () {    
 
@@ -160,10 +191,11 @@ $( ".activarsi" ).click(function() {
         var valor = ( $(this).find("input[type='radio']").val() );
 
         
+
         switch ( campo ) {
            case "persona": 
            
-                  persona= valor;
+                  persona = valor;
                   niveles++;
                break;
 
@@ -232,6 +264,9 @@ $( ".activarsi" ).click(function() {
 
                         });
                          //console.log(menor);
+                     
+
+
 
                        var imagen = 'img/resultados/'+persona+'/c'+menor+'.png'+ '?' + (new Date()).getTime();   // lo ultimo despues del ? es para limpiar cache d imagen
                        
@@ -253,16 +288,58 @@ $( ".activarsi" ).click(function() {
                        localStorage.setItem('conteo', (parseInt(localStorage.getItem('conteo'))+1) );
                   }
 
+                   if (persona==="1") {
+                           if (localStorage.getItem("hombres") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('hombres',1);
+                                  }  else {
+                                       localStorage.setItem('hombres', (parseInt(localStorage.getItem('hombres'))+1) );
+                                  }
+                        }
+                        if (persona==="2") {
+                           if (localStorage.getItem("mujeres") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('mujeres',1);
+                                  }  else {
+                                       localStorage.setItem('mujeres', (parseInt(localStorage.getItem('mujeres'))+1) );
+                                  }
+                        }
+
+                        if (menor===2) {
+                           if (localStorage.getItem("plata") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('plata',1);
+                                  }  else {
+                                       localStorage.setItem('plata', (parseInt(localStorage.getItem('plata'))+1) );
+                                  }
+                        }
+                        if (menor===1) {
+                           if (localStorage.getItem("reposado") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('reposado',1);
+                                  }  else {
+                                       localStorage.setItem('reposado', (parseInt(localStorage.getItem('reposado'))+1) );
+                                  }
+                        }
+                        if (menor===3) {
+                           if (localStorage.getItem("anejo") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('anejo',1);
+                                  }  else {
+                                       localStorage.setItem('anejo', (parseInt(localStorage.getItem('anejo'))+1) );
+                                  }
+                        }
+                         if (menor===0) {
+                           if (localStorage.getItem("innovador") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('innovador',1);
+                                  }  else {
+                                       localStorage.setItem('innovador', (parseInt(localStorage.getItem('innovador'))+1) );
+                                  }
+                        }
+
+
 
                     //console.log(  localStorage.getItem('conteo')  );
                     $('#conteo').text(localStorage.getItem('conteo'));
-
-
-                       
-                  } else {  //jugar
-                        pregunta_actual();
-                        lapregunta_actual++;
-                  }
+                    } else {  //jugar
+                          pregunta_actual();
+                          lapregunta_actual++;
+                    }
 
                break;
         
@@ -280,6 +357,21 @@ $( ".activarsi" ).click(function() {
     });   
 
 
+$(".reset").click(function() {
+  localStorage.setItem('conteo',0);
+  localStorage.setItem('hombres',0);
+  localStorage.setItem('mujeres',0);
+  localStorage.setItem('plata',0);
+  localStorage.setItem('anejo',0);
+  localStorage.setItem('reposado',0);
+  localStorage.setItem('innovador',0);
+  window.location.reload();
+
+});
+$(".regresar").click(function() {  
+  window.location.reload();
+
+});
 
 
 
@@ -340,7 +432,14 @@ $(".guardabtna").click(function() {
       }
 
 });
-
+$("#uname").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+      
+               return false;
+    }
+   });
    
 
 }); //fin
