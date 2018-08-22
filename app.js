@@ -467,14 +467,26 @@ $(".regresar").click(function() {
 $("#uname").on('change', function(){
     document.getElementById("demo").innerHTML = "";
       varial = $("#uname").val();
-      if (varial < 18) {
-          text = "Debes ser mayor de Edad";
-          document.getElementById("demo").innerHTML = text;
-          $('.esa img').hide();
-    } else {
-        $('.esa img').show();
-        $('.guardabtna').hide();
-      }
+      var numchk = new RegExp("^[0-9]*$");     /* Using this expression console.log() will display "Numeric value" if the input field value is blank or if it is numeric */  
+        $("#uname").blur( function() {                   /* This function is called whenever input field with id "number" loses focus */
+            if( numchk.test( $("#uname").val() ) ){
+                if (varial < 18) {
+                    text = "Debes ser mayor de Edad";
+                    document.getElementById("demo").innerHTML = text;
+                    $('.esa img').hide();
+                } else {
+                  $('.esa img').show();
+                  $('.guardabtna').hide();
+                }
+            }else{
+                text = "Debes ser mayor de Edad";
+                    document.getElementById("demo").innerHTML = text;
+                    $('.esa img').hide();
+            }
+        });
+
+
+      
 
 });
 $(".guardabtna").click(function() {
