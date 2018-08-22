@@ -234,6 +234,14 @@ $( ".activarsi" ).click(function() {
                        bloque_pregunta.append('<div class="col-md-12 col-sm-12 col-xs-12 text-center"><button id="inicio" type="button" onclick="javascript:window.location.reload();">REINICIAR</button></div>');
 
                        
+                  if (localStorage.getItem("conteo") === null) {    //sino existe la variable configuraciones q la cree
+                      localStorage.setItem('conteo',1);
+                  }  else {
+                       localStorage.setItem('conteo', (parseInt(localStorage.getItem('conteo'))+1) );
+                  }
+
+
+
                        
                   } else {  //jugar
                         pregunta_actual();
