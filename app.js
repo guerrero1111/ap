@@ -423,7 +423,7 @@ $(".reset").click(function() {
   localStorage.setItem('1anejo',0);
   localStorage.setItem('1reposado',0);
   localStorage.setItem('1innovador',0);
-  window.location.reload();
+  window.location.reload(); 
 
 });
 $(".regresar").click(function() {  
