@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.myapp.mobile" version="2.25" xmlns="http://www.w3.org/ns/widgets">
-  <name>Casa Souza</name>
+  <name>Casa Sauza</name>
   <description>DESCUBRE ¿CUÁL ES TU TEQUILA?</description>
-  <author email="adrian@codigodesign.com" href="http://codigodesign.com">Casa Souza</author>
+  <author email="adrian@codigodesign.com" href="http://codigodesign.com">Casa Sauza</author>
   <preference name="phonegap-version" value="cli-6.3.0" />
   <preference name="permissions" value="none" />
   <preference name="orientation" value="portrait" />
@@ -13,5 +13,5 @@
   <plugin name="cordova-plugin-device" spec="1.1.2" />
   <plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
   <splash src="splash.png" />
-  <icon src="logo1.png" />
+  <icon src="icono.png" />
 </widget>
