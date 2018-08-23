@@ -424,18 +424,9 @@ $( ".activarsi" ).click(function() {
 //   document.body.removeChild(element);
 // }
 
-function download(){
-  var url = "logo1.png"; // image url
-  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-      var imagePath = fs.root.fullPath + "/logo1.png"; // full file path
-      var fileTransfer = new FileTransfer();
-      fileTransfer.download(url, imagePath, function (entry) {
-               console.log(entry.fullPath); // entry is fileEntry object
-      }, function (error) {
-               console.log("Some error");
-      });
-   })
-}
+
+
+
 
 // Start file download.
 
@@ -453,7 +444,17 @@ var currentDate = new Date(),
 date = new Date();
 ndate = date.getTime();
 contenido = day + '/' + month + '/' + year + ' - ' + hours + ':' + minutes + ' - Conteo total:' + localStorage.getItem('plata') + ', Hombres:' + localStorage.getItem('hombres')+ ', Mujeres:' + localStorage.getItem('mujeres')+ ', Hombres Plata:' + localStorage.getItem('1plata')+ ', Hombres Añejo:' + localStorage.getItem('1anejo')+ ', Hombres Reposado:' + localStorage.getItem('1reposado')+ ', Hombres Innovador:' + localStorage.getItem('1innovador')+ ', Mujeres Plata:' + localStorage.getItem('plata')+ ', Mujeres Añejo:' + localStorage.getItem('anejo')+ ', Mujeres Reposado:' + localStorage.getItem('reposado')+ ', Mujeres Innovador:' + localStorage.getItem('innovador'); 
-download();
+//download(ndate,contenido);
+
+
+var path = "file:///storage/emulated/0";
+var filename = "PANA.txt";
+
+window.resolveLocalFileSystemURL(path, function(dir) {
+  dir.getFile(filename, {create:true}, function(fileEntry) {
+            // The file has been succesfully created. Use fileEntry to read the content or delete the file
+  });
+});
 
 
   localStorage.setItem('conteo',0);
