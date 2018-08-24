@@ -18,6 +18,12 @@ if (localStorage.getItem("mujeres") !== null) {    //sino existe la variable con
     $('#mujeres').text('0');
 }
 
+if (localStorage.getItem("venue") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#venue').val(localStorage.getItem('venue'));
+} else {
+    $('#venue').val('Aún no se guarda un Venue');
+}
+
 if (localStorage.getItem("1plata") !== null) {    //sino existe la variable configuraciones q la cree
     $('#1plata').text(localStorage.getItem('1plata'));
 } else {
@@ -140,7 +146,12 @@ $( ".activarsi" ).click(function() {
           $.each($('.configuraciones > div > input[type="checkbox"]:checked'), function(indice, valor){
              orden.push(  parseInt($(this).val())   ) ;
           });
-
+          venue = $('#venue').val();
+          
+       
+          localStorage.setItem('venue',venue);
+                                  
+        
           localStorage.setItem('configuraciones',orden);
 
           window.location.reload();
@@ -388,6 +399,7 @@ $( ".activarsi" ).click(function() {
 
 
 
+
                     //console.log(  localStorage.getItem('conteo')  );
                     $('#conteo').text(localStorage.getItem('conteo'));
                     } else {  //jugar
@@ -457,6 +469,7 @@ download(ndate,contenido);
   localStorage.setItem('1anejo',0);
   localStorage.setItem('1reposado',0);
   localStorage.setItem('1innovador',0);
+  localStorage.setItem('venue',' ');
  window.location.reload();
 
 });

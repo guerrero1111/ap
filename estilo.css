@@ -354,6 +354,9 @@ footer label{
     text-align: center;
     font-family:'Rokkitt', serif;
 }
+#venue{
+  color: #000000;
+}
 img{
 	width: 100%;
 }
