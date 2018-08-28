@@ -49,28 +49,110 @@
 
 document.getElementById("downloadFile").addEventListener("click", downloadFile);
 
-function downloadFile() {
-   var fileTransfer = new FileTransfer();
-   var uri = encodeURI("logo.png");
-   var fileURL =  "///storage/emulated/0/";
 
-   fileTransfer.download(
-      uri, fileURL, function(entry) {
-         console.log("download complete: " + entry.toURL());
-      },
-        
-      function(error) {
-         console.log("download error source " + error.source);
-         console.log("download error target " + error.target);
-         console.log("download error code" + error.code);
-      },
-        
-      false, {
-         headers: {
-            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-         }
-      }
-   );
+
+function downloadFile() {
+try {
+        alert('inicio');
+        //set the download URL, a url that points to a file on the internet
+        //this is the file to be downloaded
+        URL url = new URL("https://hayderecho.com/wp-content/uploads/2018/04/Bitcoin-1030x1030.jpg");
+
+        //create the new connection
+        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
+        //set up some things on the connection
+        urlConnection.setRequestMethod("GET");
+        urlConnection.setDoOutput(true);
+
+        //and connect!
+        urlConnection.connect();
+
+        //set the path where we want to save the file
+        //in this case, going to save it on the root directory of the
+        //sd card.
+        File SDCardRoot = Environment.getExternalStorageDirectory();
+        //create a new file, specifying the path, and the filename
+        //which we want to save the file as.
+        File file = new File(SDCardRoot,"pana.jpg");
+        alert('file');
+        //this will be used to write the downloaded data into the file we created
+        FileOutputStream fileOutput = new FileOutputStream(file);
+
+        //this will be used in reading the data from the internet
+        InputStream inputStream = urlConnection.getInputStream();
+
+        //this is the total size of the file
+        int totalSize = urlConnection.getContentLength();
+        //variable to store total downloaded bytes
+        int downloadedSize = 0;
+
+        //create a buffer...
+        byte[] buffer = new byte[1024];
+        int bufferLength = 0; //used to store a temporary size of the buffer
+        alert('bufer');
+        //now, read through the input buffer and write the contents to the file
+        while ( (bufferLength = inputStream.read(buffer)) > 0 ) {
+                //add the data in the buffer to the file in the file output stream (the file on the sd card
+                fileOutput.write(buffer, 0, bufferLength);
+                //add up the size so we know how much is downloaded
+                downloadedSize += bufferLength;
+                //this is where you would do something to report the prgress, like this maybe
+                updateProgress(downloadedSize, totalSize);
+
+        }
+        //close the output stream when done
+        fileOutput.close();
+
+//catch some possible errors...
+} catch (MalformedURLException e) {
+        alert('MalformedURLException');    
+        e.printStackTrace();
+} catch (IOException e) {
+        alert('IOException');  
+        e.printStackTrace();
+}
+}
+
+
+
+
+function downloadFile222() {
+   window.resolveLocalFileSystemURL(storageLocation,
+    function (fileSystem) {
+    
+        fileSystem.getDirectory('Download', {
+                create: true,
+                exclusive: false
+            },
+            function (directory) {
+
+                var reader = directory.createReader();
+                reader.readEntries(function (files) {
+
+                    if (files.length == 0) {
+
+                        console.log("No files found in downloads folder.")
+
+                    } else {
+
+                        $.each(files, function (i, v) {
+
+                            console.log("File Name: " + files[i].name;)
+
+                        });
+
+                    }
+
+                }, getFilesFail);
+            }, getFilesFail);
+    }, getFilesFail);
+
+var getFilesFail = function(e) {
+    
+    console.log("Error: " + e);
+    
+}
 }
         </script>
         <script type="text/javascript" src="cordova.js"></script>
