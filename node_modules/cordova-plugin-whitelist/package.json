@@ -10,7 +10,7 @@
         "spec": ">=1.0.0 <2.0.0",
         "type": "range"
       },
-      "/Users/jorgebobadilla/Documents/admin2/appcordova2/appcordova"
+      "/Users/jorgebobadilla/Documents/admin2/appcordova2/aplicacion"
     ]
   ],
   "_from": "cordova-plugin-whitelist@>=1.0.0 <2.0.0",
@@ -45,7 +45,7 @@
   "_shasum": "b5e85ecdbbfe5aeded40a1bf4ee2372e67d96fb4",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-whitelist@1",
-  "_where": "/Users/jorgebobadilla/Documents/admin2/appcordova2/appcordova",
+  "_where": "/Users/jorgebobadilla/Documents/admin2/appcordova2/aplicacion",
   "author": {
     "name": "Apache Software Foundation"
   },
