@@ -1,209 +1,50 @@
-<html lang="en">
-        <head>
-        	<meta charset="utf-8">
-        	<meta name="viewport" content="width=device-width, initial-scale=1">
-        	<title>CASA SAUZA</title>
-        	<!-- ANIMATE CSS -->
-            <script src="jquery.js"></script>
-                 <script src="download.js"></script>
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
 
-        	<!-- FONTAWESOME -->
-        	<!-- Latest compiled and minified CSS -->
-        	<link rel="stylesheet" href="bootstrap.css">
+    http://www.apache.org/licenses/LICENSE-2.0
 
-        	<!-- Optional theme -->
-        	<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
-        	<!-- GOOGLE FONT -->
-        	
-
-            <!-- BODY -->
-            <link rel="stylesheet" href="estilo.css">
-            	
-        </head>
-        <!-- BODY -->
-        <body>
-
-
-            <div class="quizContainer row">
-            	<div class="container text-center contlogo">
-            		<!-- <img class="logo" src="logo1.png" style="width: auto;">    --> 		
-            	</div>
-                
-              <!--   <div class="container configuraciones" style="border:3px solid #ffffff">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">Configura las opciones</div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
-                            <div class="switch demo3">
-                                <input type="checkbox" name="elegir" value="2" checked>
-                                <label><i></i></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
-                            <div class="switch demo3">
-                                <input type="checkbox" name="elegir" value="1" checked>
-                                <label><i></i></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
-                            <div class="switch demo3">
-                                <input type="checkbox" name="elegir" value="3" checked>
-                                <label><i></i></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
-                            <div class="switch demo3">
-                                <input type="checkbox" name="elegir" value="0" checked>
-                                <label><i></i></label>
-                            </div>
-                        </div>
-                    
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="guardabtn" value="Guardar"></div>
-                </div> -->
-
-               
-                <div class="container configuraciones" style="border:3px solid #ffffff">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">Configura las opciones</div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">
-                        <span class="text-center" style="width:100%;display: inline-block;">Nombre del Venue</span>
-                        <input type="text" id="venue" name="venue" required type="text"/>
-                    </div>
-                    
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                       <input type="checkbox" name="elegir" value="2" checked><span class="checkmark">Plata</span>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-left:0px !important;">
-                       <input type="checkbox" name="elegir" value="1" checked><span class="checkmark">Reposado</span>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                       <input type="checkbox" name="elegir" value="3" checked><span class="checkmark">Añejo</span>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-left:0px !important;">
-                       <input type="checkbox" name="elegir" value="0" checked><span class="checkmark">Innovador</span>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="guardabtn" value="Guardar"></div>
-                    <hr>
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center" id="configurat">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat" ">Estadísticas</div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span>Venue: <span id="venue"></span> </span>
-                        </div>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Participantes: <span id="conteo"></span> </span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Hombres:  <span id="hombres"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Mujeres:  <span id="mujeres"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Plata:  <span id="1plata"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Plata:  <span id="plata"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Reposado:  <span id="1reposado"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Reposado:  <span id="reposado"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Añejo:  <span id="1anejo"></span></span>
-                        </div>
-                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Añejo:  <span id="anejo"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Innovador:  <span id="1innovador"></span></span>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Innovador:  <span id="innovador"></span></span>
-                        </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 text-center"> <input type="button" class="reset guardabtn" id="downloadFile" style="background-color: red;" value="EXPORTAR"></div>
-
-                        <div class="col-md-6 col-sm-6 col-xs-6 text-center"> <input type="button" id="reset" class="reset guardabtn" style="background-color: red;" value="REINICIAR"></div>
-                        <hr>
-                        <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="regresar guardabtn" value="REGRESAR"></div>
-                </div>
-
-
-                
-                    <!-- <div class="container sexo" style="height: 800px;margin-bottom: 300px;"> -->
-
-                    <div class="container configuracion principal" style="">
-
-                        
-                        <div class="col-md-12 text-center preguntaentrada">DESCUBRE <br>¿CUÁL ES TU TEQUILA?</div>
-                        
-                        <div class="col-md-12 text-center preguntaentrada">EDAD</div>
-
-                         <div class="col-md-12 text-center preguntaentrada">
-                            <input type="text" id="uname" name="uname" required minlength="2" maxlength="2" type="number"/>
-                            <span id="demo" style="width:100%; display: inline-block;font-size: 18px;"></span>
-                        </div>
-                        <div class="col-md-12 text-center preguntaentrada"><input type="button" class="guardabtna" value="CONTINUAR"></div>
-
-
-                        <div class="col-md-12 text-center preguntaentrada sexbtn">SEXO</div>
-                        
-                        
-
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-right" style="padding-right: 0px !important;">
-                            <label>
-                                <input type="radio" value="2" name="persona" class="pregunthombre"><img src="preguntas/fem.png">
-                            </label>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-left" style="padding-left:0px !important;">
-                            <label>
-                                <input type="radio"  value="1" name="persona" class="preguntmujer"><img src="preguntas/mas.png">
-                            </label>
-                        </div>
-
-                       
-                
-
-                    </div>
-
-                    
-              </div>  
-            
-
-            
-<footer>
-    <div class="container">
-       <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-left">
-            <label>
-                www.alcoholinformate.org.mx
-            </label>
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+            <button id = "downloadFile">DOWNLOAD</button>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-right">
-            <label>
-                EVITA EL EXCESO 
-            </label>
-            <span class="activarsi"><img class="icong" src="icon.png" style="margin-bottom: 0px !important"></span>
-        </div>
-     </div>
-    <!-- <div class="container">
-        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-            <img src="footer.png" style="max-width: 100% !important">
-        </div>
-    </div> -->
-
-</footer>
-        </body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
 </html>
-
-
-    <!-- SCRIPTS -->
-
-    <!-- JQUERY -->
-    
-    <!-- BOOTSTRAP -->
-    <!-- Latest compiled and minified JavaScript -->
-
-
-    <script src="bootstrap.js"></script>
-    <!-- CUSTOM -->
-    <script src="app.js"></script>

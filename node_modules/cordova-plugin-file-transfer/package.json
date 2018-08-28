@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "/Users/jorgebobadilla/Documents/admin2/appcordova/appcordova"
+      "/Users/jorgebobadilla/Documents/admin2/appcordova2/appcordova"
     ]
   ],
   "_from": "cordova-plugin-file-transfer@latest",
@@ -45,7 +45,7 @@
   "_shasum": "a75d8be2ebc3bb9b23c5b1bbd199214ec267586b",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-file-transfer",
-  "_where": "/Users/jorgebobadilla/Documents/admin2/appcordova/appcordova",
+  "_where": "/Users/jorgebobadilla/Documents/admin2/appcordova2/appcordova",
   "author": {
     "name": "Apache Software Foundation"
   },
