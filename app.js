@@ -420,7 +420,11 @@ $( ".activarsi" ).click(function() {
        
        
 
-    });   
+    });  
+
+
+
+
 
 
 function download(filename, text) {
@@ -438,24 +442,25 @@ function download(filename, text) {
 
 
 
-
 // Start file download.
 
 
 
 $("#reset").click(function() {
 
-var currentDate = new Date(),
-      day = currentDate.getDate(),
-      month = currentDate.getMonth() + 1,
-      year = currentDate.getFullYear(),
-       hours = currentDate.getHours(),
-      minutes = currentDate.getMinutes();
 
-date = new Date();
-ndate = date.getTime();
-contenido = day + '/' + month + '/' + year + ' - ' + hours + ':' + minutes + ' - Conteo total:' + localStorage.getItem('plata') + ', Hombres:' + localStorage.getItem('hombres')+ ', Mujeres:' + localStorage.getItem('mujeres')+ ', Hombres Plata:' + localStorage.getItem('1plata')+ ', Hombres Añejo:' + localStorage.getItem('1anejo')+ ', Hombres Reposado:' + localStorage.getItem('1reposado')+ ', Hombres Innovador:' + localStorage.getItem('1innovador')+ ', Mujeres Plata:' + localStorage.getItem('plata')+ ', Mujeres Añejo:' + localStorage.getItem('anejo')+ ', Mujeres Reposado:' + localStorage.getItem('reposado')+ ', Mujeres Innovador:' + localStorage.getItem('innovador'); 
-download(ndate,contenido);
+
+// var currentDate = new Date(),
+//       day = currentDate.getDate(),
+//       month = currentDate.getMonth() + 1,
+//       year = currentDate.getFullYear(),
+//        hours = currentDate.getHours(),
+//       minutes = currentDate.getMinutes();
+
+// date = new Date();
+// ndate = date.getTime();
+// contenido = day + '/' + month + '/' + year + ' - ' + hours + ':' + minutes + ' - Conteo total:' + localStorage.getItem('plata') + ', Hombres:' + localStorage.getItem('hombres')+ ', Mujeres:' + localStorage.getItem('mujeres')+ ', Hombres Plata:' + localStorage.getItem('1plata')+ ', Hombres Añejo:' + localStorage.getItem('1anejo')+ ', Hombres Reposado:' + localStorage.getItem('1reposado')+ ', Hombres Innovador:' + localStorage.getItem('1innovador')+ ', Mujeres Plata:' + localStorage.getItem('plata')+ ', Mujeres Añejo:' + localStorage.getItem('anejo')+ ', Mujeres Reposado:' + localStorage.getItem('reposado')+ ', Mujeres Innovador:' + localStorage.getItem('innovador'); 
+// download(ndate,contenido);
 
 
   localStorage.setItem('conteo',0);
@@ -567,6 +572,9 @@ $(".guardabtna").on( "click", function() {
             }
        
  });       
+
+
+
 
 // $("#uname").keypress(function (e) {
 //      if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
