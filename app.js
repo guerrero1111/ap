@@ -6,11 +6,70 @@ jQuery(document).ready(function($) {
 
 
 if (localStorage.getItem("conteo") !== null) {    //sino existe la variable configuraciones q la cree
-                      $('#conteo').text(localStorage.getItem('conteo'));
-                  } else {
-                      $('#conteo').text('0');
-                  }
+    $('#conteo').text(localStorage.getItem('conteo'));
+} else {
+    $('#conteo').text('0');
+}
+if (localStorage.getItem("hombres") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#hombres').text(localStorage.getItem('hombres'));
+} else {
+    $('#hombres').text('0');
+}
+if (localStorage.getItem("mujeres") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#mujeres').text(localStorage.getItem('mujeres'));
+} else {
+    $('#mujeres').text('0');
+}
 
+if (localStorage.getItem("venue") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#venue').val(localStorage.getItem('venue'));
+    $('#venue1').html(localStorage.getItem('venue'));
+} else {
+    $('#venue').val(' ');
+}
+
+if (localStorage.getItem("1plata") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1plata').text(localStorage.getItem('1plata'));
+} else {
+    $('#1plata').text('0');
+}
+if (localStorage.getItem("1anejo") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1anejo').text(localStorage.getItem('1anejo'));
+} else {
+    $('#1anejo').text('0');
+}
+if (localStorage.getItem("1reposado") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1reposado').text(localStorage.getItem('1reposado'));
+} else {
+    $('#1reposado').text('0');
+}
+if (localStorage.getItem("1innovador") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#1innovador').text(localStorage.getItem('1innovador'));
+} else {
+    $('#1innovador').text('0');
+}
+
+
+if (localStorage.getItem("plata") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#plata').text(localStorage.getItem('plata'));
+} else {
+    $('#plata').text('0');
+}
+if (localStorage.getItem("anejo") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#anejo').text(localStorage.getItem('anejo'));
+} else {
+    $('#anejo').text('0');
+}
+if (localStorage.getItem("reposado") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#reposado').text(localStorage.getItem('reposado'));
+} else {
+    $('#reposado').text('0');
+}
+if (localStorage.getItem("innovador") !== null) {    //sino existe la variable configuraciones q la cree
+    $('#innovador').text(localStorage.getItem('innovador'));
+} else {
+    $('#innovador').text('0');
+}
 
                     
                     
@@ -92,7 +151,12 @@ jQuery(this).on("click",".activarsi", function () {
           $.each($('.configuraciones > div > input[type="checkbox"]:checked'), function(indice, valor){
              orden.push(  parseInt($(this).val())   ) ;
           });
-
+          venue = $('#venue').val();
+          
+       
+          localStorage.setItem('venue',venue);
+                                  
+        
           localStorage.setItem('configuraciones',orden);
 
           window.location.reload();
@@ -157,6 +221,8 @@ jQuery(this).on("click",".activarsi", function () {
     var cantJuegos=5;  
     var niveles = 1; //6;  //4+1(hombre)+1(resultado)  son 6niveles
 
+
+
     
     jQuery(this).on("click",'.pregunt', function () {    
 
@@ -164,10 +230,11 @@ jQuery(this).on("click",".activarsi", function () {
         var valor = ( $(this).find("input[type='radio']").val() );
 
         
+
         switch ( campo ) {
            case "persona": 
            
-                  persona= valor;
+                  persona = valor;
                   niveles++;
                break;
 
@@ -236,6 +303,9 @@ jQuery(this).on("click",".activarsi", function () {
 
                         });
                          //console.log(menor);
+                     
+
+
 
                        var imagen = 'img/resultados/'+persona+'/c'+menor+'.png'+ '?' + (new Date()).getTime();   // lo ultimo despues del ? es para limpiar cache d imagen
                        
@@ -257,16 +327,90 @@ jQuery(this).on("click",".activarsi", function () {
                        localStorage.setItem('conteo', (parseInt(localStorage.getItem('conteo'))+1) );
                   }
 
+                   if (persona==="1") {
+                           if (localStorage.getItem("hombres") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('hombres',1);
+                                  }  else {
+                                       localStorage.setItem('hombres', (parseInt(localStorage.getItem('hombres'))+1) );
+                                  }
+                        }
+                        if (persona==="2") {
+                           if (localStorage.getItem("mujeres") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('mujeres',1);
+                                  }  else {
+                                       localStorage.setItem('mujeres', (parseInt(localStorage.getItem('mujeres'))+1) );
+                                  }
+                        }
+
+                        if (menor===2 && persona==="1") {
+                           if (localStorage.getItem("1plata") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1plata',1);
+                                  }  else {
+                                       localStorage.setItem('1plata', (parseInt(localStorage.getItem('1plata'))+1) );
+                                  }
+                        }
+                        if (menor===1 && persona==="1") {
+                           if (localStorage.getItem("1reposado") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1reposado',1);
+                                  }  else {
+                                       localStorage.setItem('1reposado', (parseInt(localStorage.getItem('1reposado'))+1) );
+                                  }
+                        }
+                        if (menor===3 && persona==="1") {
+                           if (localStorage.getItem("1anejo") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1anejo',1);
+                                  }  else {
+                                       localStorage.setItem('1anejo', (parseInt(localStorage.getItem('anejo'))+1) );
+                                  }
+                        }
+                         if (menor===0 && persona==="1") {
+                           if (localStorage.getItem("1innovador") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('1innovador',1);
+                                  }  else {
+                                       localStorage.setItem('1innovador', (parseInt(localStorage.getItem('innovador'))+1) );
+                                  }
+                        }
+
+
+
+                        if (menor===2 && persona==="2") {
+                           if (localStorage.getItem("plata") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('plata',1);
+                                  }  else {
+                                       localStorage.setItem('plata', (parseInt(localStorage.getItem('plata'))+1) );
+                                  }
+                        }
+                        if (menor===1 && persona==="2") {
+                           if (localStorage.getItem("reposado") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('reposado',1);
+                                  }  else {
+                                       localStorage.setItem('reposado', (parseInt(localStorage.getItem('reposado'))+1) );
+                                  }
+                        }
+                        if (menor===3 && persona==="2") {
+                           if (localStorage.getItem("anejo") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('anejo',1);
+                                  }  else {
+                                       localStorage.setItem('anejo', (parseInt(localStorage.getItem('anejo'))+1) );
+                                  }
+                        }
+                         if (menor===0 && persona==="2") {
+                           if (localStorage.getItem("innovador") === null) {    //sino existe la variable configuraciones q la cree
+                                      localStorage.setItem('innovador',1);
+                                  }  else {
+                                       localStorage.setItem('innovador', (parseInt(localStorage.getItem('innovador'))+1) );
+                                  }
+                        }
+
+
+
 
                     //console.log(  localStorage.getItem('conteo')  );
                     $('#conteo').text(localStorage.getItem('conteo'));
-
-
-                       
-                  } else {  //jugar
-                        pregunta_actual();
-                        lapregunta_actual++;
-                  }
+                    } else {  //jugar
+                          pregunta_actual();
+                          lapregunta_actual++;
+                    }
 
                break;
         
@@ -281,9 +425,68 @@ jQuery(this).on("click",".activarsi", function () {
        
        
 
-    });   
+    });  
 
 
+
+
+
+
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+
+
+// Start file download.
+
+
+
+$("#reset").click(function() {
+
+
+
+// var currentDate = new Date(),
+//       day = currentDate.getDate(),
+//       month = currentDate.getMonth() + 1,
+//       year = currentDate.getFullYear(),
+//        hours = currentDate.getHours(),
+//       minutes = currentDate.getMinutes();
+
+// date = new Date();
+// ndate = date.getTime();
+// contenido = day + '/' + month + '/' + year + ' - ' + hours + ':' + minutes + ' - Conteo total:' + localStorage.getItem('plata') + ', Hombres:' + localStorage.getItem('hombres')+ ', Mujeres:' + localStorage.getItem('mujeres')+ ', Hombres Plata:' + localStorage.getItem('1plata')+ ', Hombres Añejo:' + localStorage.getItem('1anejo')+ ', Hombres Reposado:' + localStorage.getItem('1reposado')+ ', Hombres Innovador:' + localStorage.getItem('1innovador')+ ', Mujeres Plata:' + localStorage.getItem('plata')+ ', Mujeres Añejo:' + localStorage.getItem('anejo')+ ', Mujeres Reposado:' + localStorage.getItem('reposado')+ ', Mujeres Innovador:' + localStorage.getItem('innovador'); 
+// download(ndate,contenido);
+
+
+  localStorage.setItem('conteo',0);
+  localStorage.setItem('hombres',0);
+  localStorage.setItem('mujeres',0);
+  localStorage.setItem('plata',0);
+  localStorage.setItem('anejo',0);
+  localStorage.setItem('reposado',0);
+  localStorage.setItem('innovador',0);
+    localStorage.setItem('1plata',0);
+  localStorage.setItem('1anejo',0);
+  localStorage.setItem('1reposado',0);
+  localStorage.setItem('1innovador',0);
+  localStorage.setItem('venue',' ');
+ window.location.reload();
+
+});
+$(".regresar").click(function() {  
+  window.location.reload();
+
+});
 
 
 
@@ -318,17 +521,64 @@ jQuery(this).on("click",".activarsi", function () {
     }
 
 
-$("#uname").on('change', function(){
-    document.getElementById("demo").innerHTML = "";
-      varial = $("#uname").val();
-      if (varial < 18) {
-          text = "Debes ser mayor de Edad";
-          document.getElementById("demo").innerHTML = text;
-          $('.esa img').hide();
-    } else {
-        $('.esa img').show();
-        $('.guardabtna').hide();
-      }
+// $("#uname").on('change', function(){
+//     document.getElementById("demo").innerHTML = "";
+//       varial = $("#uname").val();
+//       var numchk = new RegExp("^[0-9]*$");     /* Using this expression console.log() will display "Numeric value" if the input field value is blank or if it is numeric */  
+//         $("#uname").blur( function() {                   /* This function is called whenever input field with id "number" loses focus */
+//             if( numchk.test( $("#uname").val() ) ){
+//                 if (varial < 18) {
+//                     $("#uname").val("");
+                     
+//                     text = "Debes ser mayor de Edad";
+//                     document.getElementById("demo").innerHTML = text;
+//                     $('.esa img').hide();
+                     
+//                 } else {
+//                   $('.esa img').show();
+//                   $('.guardabtna').hide();
+//                 }
+//             }else{
+//               $("#uname").val("");
+              
+//                 text = "Dato inválido";
+//                     document.getElementById("demo").innerHTML = text;
+//                     $('.esa img').hide();
+                     
+//             }
+//         });
+
+
+      
+
+// });
+$(".guardabtna").on( "click", function() {
+  varial = $("#uname").val();       
+      var numchk = new RegExp("^[0-9]*$");     /* Using this expression console.log() will display "Numeric value" if the input field value is blank or if it is numeric */  
+            if( numchk.test( $("#uname").val() ) ){
+                if (varial < 18) {
+                    $("#uname").val("");
+                     
+                    text = "Debes ser mayor de Edad";
+                    document.getElementById("demo").innerHTML = text;
+                    $('.esa img').hide();
+                     
+                } else {
+                  $('.esa img').show();
+                  $('.guardabtna').hide();
+                }
+            }else{
+              $("#uname").val("");
+              
+                text = "Dato inválido";
+                    document.getElementById("demo").innerHTML = text;
+                    $('.esa img').hide();
+                     
+            }
+       
+ });       
+
+
 
 });
 //$(".guardabtna").click(function() {
@@ -344,9 +594,13 @@ $("#uname").on('change', function(){
         $('.guardabtna').hide();
       }
 
-});
 
-   
+// $("#uname").keypress(function (e) {
+//      if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+      
+//                return false;
+//     }
+//    });
 
 
 //fin////////////////////////////////////////

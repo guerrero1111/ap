@@ -4,10 +4,13 @@
         	<meta name="viewport" content="width=device-width, initial-scale=1">
         	<title>CASA SAUZA</title>
         	<!-- ANIMATE CSS -->
-             
+            <script src="jquery.js"></script>
+                 <script src="download.js"></script>
+
         	<!-- FONTAWESOME -->
         	<!-- Latest compiled and minified CSS -->
         	<link rel="stylesheet" href="bootstrap.css">
+
         	<!-- Optional theme -->
         	<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
         	<!-- GOOGLE FONT -->
@@ -23,7 +26,7 @@
 
             <div class="quizContainer row">
             	<div class="container text-center contlogo">
-            		<img class="logo" src="logo1.png" style="width: auto;">    		
+            		<!-- <img class="logo" src="logo1.png" style="width: auto;">    --> 		
             	</div>
                 
               <!--   <div class="container configuraciones" style="border:3px solid #ffffff">
@@ -59,6 +62,11 @@
                
                 <div class="container configuraciones" style="border:3px solid #ffffff">
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">Configura las opciones</div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">
+                        <span class="text-center" style="width:100%;display: inline-block;">Nombre del Venue</span>
+                        <input type="text" id="venue" name="venue" required type="text"/>
+                    </div>
+                    
                     <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
                        <input type="checkbox" name="elegir" value="2" checked><span class="checkmark">Plata</span>
                     </div>
@@ -73,28 +81,51 @@
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="guardabtn" value="Guardar"></div>
                     <hr>
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat">Estadísticas</div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center" id="configurat">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center configurat" ">Estadísticas</div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
+                           <span>Venue: <span id="venue1"></span> </span>
+                        </div>
+
                         <div class="col-md-12 col-sm-12 col-xs-12 pregunt text-center infoc" style="padding-right: 0px !important;">
                            <span class="checkmark">Participantes: <span id="conteo"></span> </span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Hombres:</span>
+                           <span class="checkmark">Hombres:  <span id="hombres"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Mujeres:</span>
+                           <span class="checkmark">Mujeres:  <span id="mujeres"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Plata:</span>
+                           <span class="checkmark">Perfil Plata:  <span id="1plata"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Reposado:</span>
+                           <span class="checkmark">Perfil Plata:  <span id="plata"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Añejo:</span>
+                           <span class="checkmark">Perfil Reposado:  <span id="1reposado"></span></span>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
-                           <span class="checkmark">Perfil Innovador:</span>
+                           <span class="checkmark">Perfil Reposado:  <span id="reposado"></span></span>
                         </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
+                           <span class="checkmark">Perfil Añejo:  <span id="1anejo"></span></span>
+                        </div>
+                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
+                           <span class="checkmark">Perfil Añejo:  <span id="anejo"></span></span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
+                           <span class="checkmark">Perfil Innovador:  <span id="1innovador"></span></span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 pregunt text-center infoc" style="padding-right: 0px !important;">
+                           <span class="checkmark">Perfil Innovador:  <span id="innovador"></span></span>
+                        </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-center"> <input type="button" class="reset guardabtn"  style="background-color: red;" value="EXPORTAR"></div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-center"> <input type="button" id="reset" class="reset guardabtn" style="background-color: red;" value="REINICIAR"></div>
+                        <hr>
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center"> <input type="button" class="regresar guardabtn" value="REGRESAR"></div>
                 </div>
 
 
@@ -109,7 +140,7 @@
                         <div class="col-md-12 text-center preguntaentrada">EDAD</div>
 
                          <div class="col-md-12 text-center preguntaentrada">
-                            <input type="text" id="uname" name="uname" required minlength="2" maxlength="2" />
+                            <input type="text" id="uname" name="uname" required minlength="2" maxlength="2" type="number"/>
                             <span id="demo" style="width:100%; display: inline-block;font-size: 18px;"></span>
                         </div>
                         <div class="col-md-12 text-center preguntaentrada"><input type="button" class="guardabtna" value="CONTINUAR"></div>
@@ -121,12 +152,12 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-right" style="padding-right: 0px !important;">
                             <label>
-                                <input type="radio" value="2" name="persona"><img src="preguntas/fem.png">
+                                <input type="radio" value="2" name="persona" class="pregunthombre"><img src="preguntas/fem.png">
                             </label>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 pregunt esa text-left" style="padding-left:0px !important;">
                             <label>
-                                <input type="radio"  value="1" name="persona"><img src="preguntas/mas.png">
+                                <input type="radio"  value="1" name="persona" class="preguntmujer"><img src="preguntas/mas.png">
                             </label>
                         </div>
 
@@ -159,6 +190,37 @@
             <img src="footer.png" style="max-width: 100% !important">
         </div>
     </div> -->
+<script type="text/javascript">
+    document.getElementById("downloadFile").addEventListener("click", downloadFile);
+
+function downloadFile() {
+   var fileTransfer = new FileTransfer();
+   var uri = encodeURI("http://s14.postimg.org/i8qvaxyup/bitcoin1.jpg");
+   var fileURL =  "///storage/emulated/0/DCIM/myFile";
+
+   fileTransfer.download(
+      uri, fileURL, function(entry) {
+         console.log("download complete: " + entry.toURL());
+      },
+        
+      function(error) {
+         console.log("download error source " + error.source);
+         console.log("download error target " + error.target);
+         console.log("download error code" + error.code);
+      },
+        
+      false, {
+         headers: {
+            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+         }
+      }
+   );
+}
+
+
+   
+
+    </script>
 </footer>
         </body>
 </html>
@@ -167,9 +229,11 @@
     <!-- SCRIPTS -->
 
     <!-- JQUERY -->
-    <script src="jquery.js"></script>
+    
     <!-- BOOTSTRAP -->
     <!-- Latest compiled and minified JavaScript -->
+
+
     <script src="bootstrap.js"></script>
     <!-- CUSTOM -->
     <script src="app.js"></script>

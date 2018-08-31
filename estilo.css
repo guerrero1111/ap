@@ -27,6 +27,9 @@ input[type=radio] {
 .esa img,.sexbtn{
     display: none;
 }
+hr{
+    border: 1px solid #ffffff;
+}
 #uname{
     color: #000000;
     width: 150px;
@@ -290,7 +293,7 @@ footer label{
 }
 .imagenresultado img{
     width: auto !important;
-        max-width: 100%;
+   max-width: 92%;
 }
 #inicio{
         border: 0px;
@@ -299,7 +302,7 @@ footer label{
     border-radius: 9px;
     font-size: 22px;
     margin-top: 20px;
-    margin-bottom: 55px;
+    margin-bottom: 15px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -350,6 +353,9 @@ footer label{
     margin: auto;
     text-align: center;
     font-family:'Rokkitt', serif;
+}
+#venue{
+  color: #000000;
 }
 img{
 	width: 100%;
