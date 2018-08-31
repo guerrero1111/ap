@@ -1,4 +1,7 @@
 jQuery(document).ready(function($) {
+  jQuery(document).on("deviceready", function() { 
+    //comienzo//////////////////////////////////////
+
     $('.configuraciones').hide();
 
 
@@ -13,7 +16,8 @@ if (localStorage.getItem("conteo") !== null) {    //sino existe la variable conf
                     
 
 
-$( ".activarsi" ).click(function() {
+//$( ".activarsi" ).click(function() {
+jQuery(this).on("click",".activarsi", function () {    
    $('.configuraciones').show();
    $('.icong').hide();
 });
@@ -82,7 +86,7 @@ $( ".activarsi" ).click(function() {
 
      
 
-     $(this).on("click",'input[type="button"][value="Guardar"]', function () {    
+     jQuery(this).on("click",'input[type="button"][value="Guardar"]', function () {    
        // alert('sad');
           orden =[]; //vacio orden y guardo uno nuevo
           $.each($('.configuraciones > div > input[type="checkbox"]:checked'), function(indice, valor){
@@ -154,7 +158,7 @@ $( ".activarsi" ).click(function() {
     var niveles = 1; //6;  //4+1(hombre)+1(resultado)  son 6niveles
 
     
-    $(this).on("click",'.pregunt', function () {    
+    jQuery(this).on("click",'.pregunt', function () {    
 
         var campo = ( $(this).find("input[type='radio']").attr('name') );
         var valor = ( $(this).find("input[type='radio']").val() );
@@ -327,7 +331,8 @@ $("#uname").on('change', function(){
       }
 
 });
-$(".guardabtna").click(function() {
+//$(".guardabtna").click(function() {
+  jQuery(document).on("click",'.guardabtna', function () {    
   document.getElementById("demo").innerHTML = "";
       varial = $("#uname").val();
       if (varial < 18) {
@@ -343,6 +348,7 @@ $(".guardabtna").click(function() {
 
    
 
-}); //fin
 
-
+//fin////////////////////////////////////////
+  }); 
+}); //fin 
