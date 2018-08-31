@@ -23,9 +23,11 @@ if (localStorage.getItem("mujeres") !== null) {    //sino existe la variable con
 
 if (localStorage.getItem("venue") !== null) {    //sino existe la variable configuraciones q la cree
     $('#venue').val(localStorage.getItem('venue'));
+    $('#venue1').html(localStorage.getItem('venue'));
 } else {
-    $('#venue').val('Aún no se guarda un Venue');
+    $('#venue').val(' ');
 }
+
 
 if (localStorage.getItem("1plata") !== null) {    //sino existe la variable configuraciones q la cree
     $('#1plata').text(localStorage.getItem('1plata'));
