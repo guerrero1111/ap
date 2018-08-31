@@ -490,7 +490,7 @@ jQuery(this).on("click","#reset", function () {
 
  date = new Date();
  var ndate = date.getTime();
- var contenido = day + '/' + month + '/' + year + ' - ' + hours + ':' + minutes + ' - Conteo total:' + localStorage.getItem('plata') + ', Hombres:' + localStorage.getItem('hombres')+ ', Mujeres:' + localStorage.getItem('mujeres')+ ', Hombres Plata:' + localStorage.getItem('1plata')+ ', Hombres Añejo:' + localStorage.getItem('1anejo')+ ', Hombres Reposado:' + localStorage.getItem('1reposado')+ ', Hombres Innovador:' + localStorage.getItem('1innovador')+ ', Mujeres Plata:' + localStorage.getItem('plata')+ ', Mujeres Añejo:' + localStorage.getItem('anejo')+ ', Mujeres Reposado:' + localStorage.getItem('reposado')+ ', Mujeres Innovador:' + localStorage.getItem('innovador'); 
+ var contenido = 'Venue:' + venue + 'Fecha: ' + day + '/' + month + '/' + year + ' - ' + hours + ':' + minutes + ' - Conteo total:' + localStorage.getItem('plata') + ', Hombres:' + localStorage.getItem('hombres')+ ', Mujeres:' + localStorage.getItem('mujeres')+ ', Hombres Plata:' + localStorage.getItem('1plata')+ ', Hombres Añejo:' + localStorage.getItem('1anejo')+ ', Hombres Reposado:' + localStorage.getItem('1reposado')+ ', Hombres Innovador:' + localStorage.getItem('1innovador')+ ', Mujeres Plata:' + localStorage.getItem('plata')+ ', Mujeres Añejo:' + localStorage.getItem('anejo')+ ', Mujeres Reposado:' + localStorage.getItem('reposado')+ ', Mujeres Innovador:' + localStorage.getItem('innovador'); 
 ////////////////////////////////aqui va el codigo jajajaj//////////////////////
   alert(contenido);
     var storageLocation = 'file:///storage/emulated/0/';
